@@ -1,15 +1,14 @@
 import pygame
 
-WIDTH = 800
-HEIGHT = 800     #tama~o de cada cuadrado
-ROWS = 8
-COLUMNS = 8     #cantidad de filas y columnas para el tablero
-SQUARE = WIDTH//COLUMNS
+WIDTH, HEIGHT = 800, 800
+ROWS, COLS = 8, 8
+SQUARE_SIZE = WIDTH//COLS
 
-NEGRO = (0, 0, 0)
-ROJO = (255, 0, 0)
-BLANCO = (255, 255, 255)
-AZUL = (0, 0, 255)
-GRIS = (128,128,128)
+# rgb
+RED = (0, 0, 200)
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+BLUE = (0, 0, 255)
+GREY = (128,128,128)
 
-#CROWN
+CROWN = pygame.transform.scale(pygame.image.load('assets/crown.png'), (44, 25))
