@@ -1,37 +1,37 @@
-from .Variables import NEGRO, SQUARE, CROWN
+from .Variables import RED, WHITE, SQUARE_SIZE, GREY, CROWN
 import pygame
 
-class Pieza:
-    OUTLINE = 3
-    PADDING = 5
+class Piece:
+    PADDING = 15
+    OUTLINE = 2
 
-    def init(s, row, columns, clor):
-        s.row = row
-        s.columns = columns
-        s.clor = clor
-        s.king = False
-        s.x = 0
-        s.y = 0
-        s.calc_pos()
+    def __init__(self, row, col, color):
+        self.row = row
+        self.col = col
+        self.color = color
+        self.king = False
+        self.x = 0
+        self.y = 0
+        self.calc_pos()
 
-    def calc_pos(s):
-        s.x = SQUARE * s.columns + SQUARE // 2
-        s.y = SQUARE * s.row + SQUARE // 2
+    def calc_pos(self):
+        self.x = SQUARE_SIZE * self.col + SQUARE_SIZE // 2
+        self.y = SQUARE_SIZE * self.row + SQUARE_SIZE // 2
 
-    def make_king(s):
-        s.king = True
+    def make_king(self):
+        self.king = True
     
-    def draw(s, win):
-        radius = SQUARE//2 - s.PADDING
-        pygame.draw.circle(win, NEGRO, (s.x, s.y), radius + s.OUTLINE)
-        pygame.draw.circle(win, s.clor, (s.x, s.y), radius)
-        if s.king:
-            win.blit(CROWN, (s.x - CROWN.get_width()//2, s.y - CROWN.get_height()//2))
+    def draw(self, win):
+        radius = SQUARE_SIZE//2 - self.PADDING
+        pygame.draw.circle(win, GREY, (self.x, self.y), radius + self.OUTLINE)
+        pygame.draw.circle(win, self.color, (self.x, self.y), radius)
+        if self.king:
+            win.blit(CROWN, (self.x - CROWN.get_width()//2, self.y - CROWN.get_height()//2))
 
-    def move(s, row, columns):
-        s.row = row
-        s.columns = columns
-        s.calc_pos()
+    def move(self, row, col):
+        self.row = row
+        self.col = col
+        self.calc_pos()
 
-    def __repr__(s):
-        return str(s.clor)
+    def __repr__(self):
+        return str(self.color)
