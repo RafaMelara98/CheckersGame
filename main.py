@@ -1,13 +1,13 @@
 # Assets: https://www.flaticon.com/free-icons/crown Crown icons created by Freepik - Flaticon
 import pygame
-from PiezasVariables.Variables import WIDTH, HEIGHT, SQUARE_SIZE, RED, WHITE
+from PiezasVariables.Variables import WIDTH, HEIGHT, SQUARE_SIZE, BLUE, WHITE
 from PiezasVariables.game import Game
 from minimax.algorithm import minimax
 
 FPS = 60
 
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption('Checkers')
+pygame.display.set_caption('CheckersGame')
 
 def get_row_col_from_mouse(pos):
     x, y = pos
@@ -24,7 +24,7 @@ def main():
         clock.tick(FPS)
         
         if game.turn == WHITE:
-            value, new_board = minimax(game.get_board(), 8, WHITE, game)
+            value, new_board = minimax(game.get_board(), 100, WHITE, game)
             game.ai_move(new_board)
 
         if game.winner() != None:
