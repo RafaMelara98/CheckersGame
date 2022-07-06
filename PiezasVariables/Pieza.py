@@ -1,4 +1,4 @@
-from .Variables import RED, WHITE, SQUARE_SIZE, GREY, CROWN
+from .Variables import BLUE, WHITE, SQUARE_SIZE, GREY, CROWN
 import pygame
 
 class Piece:

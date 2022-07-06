@@ -1,6 +1,6 @@
 # Assets: https://www.flaticon.com/free-icons/crown Crown icons created by Freepik - Flaticon
 import pygame
-from PiezasVariables.Variables import WIDTH, HEIGHT, SQUARE_SIZE, RED, WHITE
+from PiezasVariables.Variables import WIDTH, HEIGHT, SQUARE_SIZE, BLUE, WHITE
 from PiezasVariables.game import Game
 from minimax.algorithm import minimax
 
